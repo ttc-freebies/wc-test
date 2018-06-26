@@ -17,16 +17,21 @@ module.exports = function (config) {
 	var customLaunchers = {
 		'SL_Chrome': {
 			base: 'SauceLabs',
-			browserName: 'chrome'
+			browserName: 'chrome',
+			platform: 'Windows 10',
+			version: "latest"
 		},
 		'SL_Firefox': {
 			base: 'SauceLabs',
 			browserName: 'firefox',
+			platform: 'Windows 10',
+			version: "latest"
 		},
 		'SL_Safari': {
 			base: 'SauceLabs',
 			browserName: 'safari',
 			platform: 'OS X 10.11',
+			version: "latest"
 		},
 		'SL_IE_11': {
 			base: 'SauceLabs',
@@ -57,8 +62,7 @@ module.exports = function (config) {
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
-		reporters: ['dots'],
-
+		reporters: ['progress'],
 
 		// web server port
 		port: 9876,
@@ -67,7 +71,7 @@ module.exports = function (config) {
 
 		// level of logging
 		// possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-		logLevel: config.LOG_INFO,
+		logLevel: config.LOG_DEBUG,
 
 		sauceLabs: {
 			testName: 'Karma and Sauce Labs demo'
