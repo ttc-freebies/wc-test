@@ -16,6 +16,7 @@ class CustomElement extends HTMLElement {
 	}
 
 	connectedCallback() {
+
 		const x = document.createElement('div');
 		x.classList.add('new');
 		x.id = 'the-id';
