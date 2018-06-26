@@ -1,0 +1,17 @@
+25 lines (23 sloc)  1.76 KB
+
+sudo: false
+dist: trusty
+language: node_js
+node_js:
+- '8'
+before_install:
+- if [[ `npm -v` != 5* ]]; then npm install --unsafe-perm --verbose -g npm@5; fi
+install:
+- npm install
+script:
+- npm run test
+notifications:
+  email: false
+addons:
+	sauce_connect: true
