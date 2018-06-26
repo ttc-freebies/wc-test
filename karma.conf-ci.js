@@ -1,18 +1,4 @@
-var fs = require('fs');
-
 module.exports = function (config) {
-
-	// Use ENV vars on Travis and sauce.json locally to get credentials
-	if (!process.env.SAUCE_USERNAME) {
-		if (!fs.existsSync('credentials.json')) {
-			console.log('Create a credentials.json with your credentials.');
-			process.exit(1);
-		} else {
-			process.env.SAUCE_USERNAME = require('./sauce').username;
-			process.env.SAUCE_ACCESS_KEY = require('./sauce').accessKey;
-		}
-	}
-
 	// Browsers to run on Sauce Labs
 	var customLaunchers = {
 		'SL_Chrome': {
@@ -62,10 +48,10 @@ module.exports = function (config) {
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
-		reporters: ['progress'],
+		reporters: ['dots'],
 
 		// web server port
-		port: 9876,
+		port: 9899,
 
 		colors: true,
 
